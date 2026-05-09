@@ -15,8 +15,8 @@
 
 	const languages = ['C', 'C++', 'Rust', 'Java', 'Svelte', 'Python'];
 	const skills = ['Linux', 'NixOS', 'vim'];
-	const specialties = ['LLMs', 'Machine Learning'];
-	const hobbies = ['Game dev', 'Going to the gym'];
+	const specialties = ['Machine Learning', 'Algorithms'];
+	const hobbies = ['Game dev', 'Going to the gym', 'Playing with my cat'];
 	const apCourses = [
 		'AP Precalculus',
 		'AP Calculus BC',
@@ -72,10 +72,15 @@
 			{
 				year: '2025',
 				contest: 'Monta Vista High School Symphonic band',
-				result: 'Percussion section leader'
+				result: 'Percussion principal player'
 			}
 		]
 	};
+
+	const activities = [
+		'Monta Vista Applied Math Club - Director of outreach',
+		'Monta Vista Rocketry Team - Team member'
+	];
 
 	const isThemePreference = (value: string | null): value is ThemePreference =>
 		value === 'light' || value === 'dark' || value === 'system';
@@ -179,7 +184,7 @@
 				</div>
 
 				<div class="flex flex-wrap gap-2">
-					{#each specialties as item}
+					{#each specialties as item (item)}
 						<Badge>{item}</Badge>
 					{/each}
 				</div>
@@ -195,7 +200,7 @@
 						<Card.Title>Languages</Card.Title>
 					</Card.Header>
 					<Card.Content class="flex flex-wrap gap-2">
-						{#each languages as language}
+						{#each languages as language (language)}
 							<Badge variant="secondary">{language}</Badge>
 						{/each}
 					</Card.Content>
@@ -208,7 +213,7 @@
 						<Card.Title>Skills</Card.Title>
 					</Card.Header>
 					<Card.Content class="flex flex-wrap gap-2">
-						{#each skills as skill}
+						{#each skills as skill (skill)}
 							<Badge variant="outline">{skill}</Badge>
 						{/each}
 					</Card.Content>
@@ -264,7 +269,7 @@
 					<div>
 						<p class="mb-2 font-medium text-stone-900 dark:text-stone-100">AP Courses</p>
 						<div class="flex flex-wrap gap-2">
-							{#each apCourses as course}
+							{#each apCourses as course (course)}
 								<Badge variant="secondary">{course}</Badge>
 							{/each}
 						</div>
@@ -272,7 +277,7 @@
 					<div>
 						<p class="mb-2 font-medium text-stone-900 dark:text-stone-100">De Anza Courses</p>
 						<div class="flex flex-wrap gap-2">
-							{#each deAnzaCourses as course}
+							{#each deAnzaCourses as course (course)}
 								<Badge variant="outline">{course}</Badge>
 							{/each}
 						</div>
@@ -288,7 +293,7 @@
 				<Card.Title>Achievements</Card.Title>
 				<Card.Description>Math, programming, and music milestones.</Card.Description>
 			</Card.Header>
-			<Card.Content class="grid gap-6 md:grid-cols-3">
+			<Card.Content class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				<section>
 					<h3
 						class="mb-2 text-sm font-semibold tracking-wide text-stone-500 uppercase dark:text-stone-400"
@@ -296,7 +301,7 @@
 						Math
 					</h3>
 					<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
-						{#each achievements.math as item}
+						{#each achievements.math as item (`${item.year}-${item.contest}`)}
 							<li>
 								<span class="font-semibold">{item.year}</span>
 								<span class="font-semibold"> {item.contest}</span> - {item.result}
@@ -311,7 +316,7 @@
 						Programming
 					</h3>
 					<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
-						{#each achievements.programming as item}
+						{#each achievements.programming as item (`${item.year}-${item.contest}`)}
 							<li>
 								<span class="font-semibold">{item.year}</span>
 								<span class="font-semibold"> {item.contest}</span> - {item.result}
@@ -326,7 +331,7 @@
 						Music
 					</h3>
 					<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
-						{#each achievements.music as item}
+						{#each achievements.music as item (`${item.year}-${item.contest}`)}
 							<li>
 								<span class="font-semibold">{item.year}</span>
 								<span class="font-semibold"> {item.contest}</span>: {item.result}
@@ -341,10 +346,25 @@
 			class="border-stone-900/10 bg-white/80 shadow-md dark:border-white/10 dark:bg-stone-900/75"
 		>
 			<Card.Header>
+				<Card.Title>Activities</Card.Title>
+			</Card.Header>
+			<Card.Content>
+				<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
+					{#each activities as activity (activity)}
+						<li>{activity}</li>
+					{/each}
+				</ul>
+			</Card.Content>
+		</Card.Root>
+
+		<Card.Root
+			class="border-stone-900/10 bg-white/80 shadow-md dark:border-white/10 dark:bg-stone-900/75"
+		>
+			<Card.Header>
 				<Card.Title>Hobbies & interests</Card.Title>
 			</Card.Header>
 			<Card.Content class="flex flex-wrap gap-2">
-				{#each hobbies as hobby}
+				{#each hobbies as hobby (hobby)}
 					<Badge variant="outline">{hobby}</Badge>
 				{/each}
 			</Card.Content>
