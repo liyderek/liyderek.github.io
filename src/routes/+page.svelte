@@ -14,7 +14,14 @@
 	let resolvedTheme: 'light' | 'dark' = 'light';
 
 	const languages = ['C', 'C++', 'Rust', 'Java', 'Svelte', 'Python'];
-	const skills = ['Linux', 'NixOS', 'vim'];
+	const skills = [
+		{ name: 'Linux', description: 'Fundamentals of linux systems' },
+		{ name: 'NixOS', description: 'NixOS server management' },
+		{ name: 'Tauri', description: 'Frontend app development using Tauri' },
+		{ name: 'Rocket', description: 'Backend development using rocket' },
+		{ name: 'Flask', description: 'Backend development using flask/quart in Python' },
+		{ name: 'Machine learning', description: 'Machine learning with Python' }
+	];
 	const specialties = ['Machine Learning', 'Algorithms'];
 	const hobbies = ['Game dev', 'Going to the gym', 'Playing with my cat'];
 	const apCourses = [
@@ -76,6 +83,12 @@
 			}
 		]
 	};
+
+	const pastProjects = [
+		'Summer 2025 AWS Machine Learning internship - Electricity Load Forecasting using Machine Learning',
+		'Summer 2025 Inspirit AI Summer Program - Object Detection for Self Driving Cars',
+		'Winter 2025 - Credit Card Fraud Detection using Machine Learning'
+	];
 
 	const activities = [
 		'Monta Vista Applied Math Club - Director of outreach',
@@ -213,9 +226,13 @@
 						<Card.Title>Skills</Card.Title>
 					</Card.Header>
 					<Card.Content class="flex flex-wrap gap-2">
-						{#each skills as skill (skill)}
-							<Badge variant="outline">{skill}</Badge>
-						{/each}
+						<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
+							{#each skills as skill (`${skill.name}-${skill.description}`)}
+								<li>
+									<span class="font-semibold">{skill.name}</span> - {skill.description}
+								</li>
+							{/each}
+						</ul>
 					</Card.Content>
 				</Card.Root>
 			</div>
@@ -228,7 +245,10 @@
 				</Card.Header>
 				<Card.Content class="space-y-4">
 					<div>
-						<p class="font-medium text-stone-900 dark:text-stone-100">Stellar Learning</p>
+						<p class="font-medium text-stone-900 dark:text-stone-100">
+							Stellar Learning (<a href="https://stellarlearning.app">stellarlearning.app</a>):
+							2025-present
+						</p>
 						<p class="text-sm text-stone-700 dark:text-stone-300">
 							AI powered study app. I am part of the core team and in charge of development for the
 							competitive math module.
@@ -236,10 +256,22 @@
 					</div>
 					<Separator />
 					<div>
-						<p class="font-medium text-stone-900 dark:text-stone-100">Scope</p>
+						<p class="font-medium text-stone-900 dark:text-stone-100">
+							Scope (<a href="https://scopeapp.dev">scopeapp.dev</a>, website in progress):
+							2026-present
+						</p>
 						<p class="text-sm text-stone-700 dark:text-stone-300">
-							Focus and scheduling app for people with ADHD and autism to concentrate and plan tasks
-							and events.
+							Started a focus and scheduling app for people with attention issues such as ADHD to
+							concentrate and plan tasks and events.
+						</p>
+					</div>
+					<Separator />
+					<div>
+						<p class="font-medium text-stone-900 dark:text-stone-100">
+							Underground hell: 2025-present
+						</p>
+						<p class="text-sm text-stone-700 dark:text-stone-300">
+							Working on a game called Underground hell in my free time (will be released soon)
 						</p>
 					</div>
 				</Card.Content>
@@ -262,7 +294,7 @@
 						<li><span class="font-semibold">Monta Vista High School</span> (Cupertino, CA)</li>
 						<li><span class="font-semibold">De Anza College</span> (Dual Enrollment)</li>
 					</ul>
-					<p><span class="font-medium">GPA:</span> UW - 4.0, W - 4.46</p>
+					<p><span class="font-medium">High school GPA:</span> UW - 4.0, W - 4.46</p>
 				</section>
 
 				<section class="space-y-4 text-sm">
@@ -275,7 +307,7 @@
 						</div>
 					</div>
 					<div>
-						<p class="mb-2 font-medium text-stone-900 dark:text-stone-100">De Anza Courses</p>
+						<p class="mb-2 font-medium text-stone-900 dark:text-stone-100">College courses</p>
 						<div class="flex flex-wrap gap-2">
 							{#each deAnzaCourses as course (course)}
 								<Badge variant="outline">{course}</Badge>
@@ -290,8 +322,8 @@
 			class="border-stone-900/10 bg-white/80 shadow-md dark:border-white/10 dark:bg-stone-900/75"
 		>
 			<Card.Header>
-				<Card.Title>Achievements</Card.Title>
-				<Card.Description>Math, programming, and music milestones.</Card.Description>
+				<Card.Title>Competition achievements & Awards</Card.Title>
+				<Card.Description>Math, programming, and music</Card.Description>
 			</Card.Header>
 			<Card.Content class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				<section>
@@ -346,7 +378,22 @@
 			class="border-stone-900/10 bg-white/80 shadow-md dark:border-white/10 dark:bg-stone-900/75"
 		>
 			<Card.Header>
-				<Card.Title>Activities</Card.Title>
+				<Card.Title>Past Projects</Card.Title>
+			</Card.Header>
+			<Card.Content>
+				<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
+					{#each pastProjects as project (project)}
+						<li>{project}</li>
+					{/each}
+				</ul>
+			</Card.Content>
+		</Card.Root>
+
+		<Card.Root
+			class="border-stone-900/10 bg-white/80 shadow-md dark:border-white/10 dark:bg-stone-900/75"
+		>
+			<Card.Header>
+				<Card.Title>Other Activities</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<ul class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
