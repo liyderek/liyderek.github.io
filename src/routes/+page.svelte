@@ -17,7 +17,8 @@
 	const skills = [
 		{ name: 'Linux', description: 'Fundamentals of linux systems' },
 		{ name: 'NixOS', description: 'NixOS server management' },
-		{ name: 'Tauri', description: 'Frontend app development using Tauri' },
+		{ name: 'Tauri', description: 'Mobile frontend app development using Tauri' },
+		{ name: 'Svelte', description: 'Website development using Svelte' },
 		{ name: 'Rocket', description: 'Backend development using rocket' },
 		{ name: 'Flask', description: 'Backend development using flask/quart in Python' },
 		{ name: 'Machine learning', description: 'Machine learning with Python' }
@@ -133,11 +134,37 @@
 </script>
 
 <svelte:head>
-	<title>Derek Li | Portfolio</title>
+	<title>Derek Li | Monta Vista High School | Portfolio</title>
 	<meta
 		name="description"
-		content="Portfolio of Derek Li, student developer focused on competitive programming, math, and machine learning."
+		content="Derek Li is a Monta Vista High School student in Cupertino, CA focused on competitive programming, math, and machine learning."
 	/>
+	<meta name="robots" content="index, follow" />
+	<meta property="og:title" content="Derek Li | Monta Vista High School | Portfolio" />
+	<meta
+		property="og:description"
+		content="Portfolio of Derek Li, Monta Vista High School student developer focused on programming, math, and machine learning."
+	/>
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Derek Li | Monta Vista High School | Portfolio" />
+	<meta
+		name="twitter:description"
+		content="Portfolio of Derek Li, Monta Vista High School student developer focused on programming, math, and machine learning."
+	/>
+	<script type="application/ld+json">
+		{JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Person',
+			name: 'Derek Li',
+			url: 'https://github.com/liyderek',
+			affiliation: {
+				'@type': 'EducationalOrganization',
+				name: 'Monta Vista High School'
+			},
+			sameAs: ['https://github.com/liyderek']
+		})}
+	</script>
 </svelte:head>
 
 <main
@@ -246,12 +273,12 @@
 				<Card.Content class="space-y-4">
 					<div>
 						<p class="font-medium text-stone-900 dark:text-stone-100">
-							Stellar Learning (<a href="https://stellarlearning.app">stellarlearning.app</a>):
-							2025-present
+							Stellar Learning : 2025-present
 						</p>
 						<p class="text-sm text-stone-700 dark:text-stone-300">
-							AI powered study app. I am part of the core team and in charge of development for the
-							competitive math module.
+							Part of the core team of Stellar Learning, a web-based AI powered study app (<a
+								href="https://stellarlearning.app">stellarlearning.app</a
+							>) and in charge of development for the competitive math module.
 						</p>
 					</div>
 					<Separator />
@@ -271,7 +298,7 @@
 							Underground hell: 2025-present
 						</p>
 						<p class="text-sm text-stone-700 dark:text-stone-300">
-							Working on a game called Underground hell in my free time (will be released soon)
+							Developing a game called Underground hell in my free time (will be released soon)
 						</p>
 					</div>
 				</Card.Content>
@@ -291,8 +318,12 @@
 				<section class="space-y-2 text-sm text-stone-800 dark:text-stone-200">
 					<p class="font-medium text-stone-900 dark:text-stone-100">Current Schools</p>
 					<ul class="space-y-1">
-						<li><span class="font-semibold">Monta Vista High School</span> (Cupertino, CA)</li>
-						<li><span class="font-semibold">De Anza College</span> (Dual Enrollment)</li>
+						<li>
+							<span class="font-semibold">Monta Vista High School</span> (Cupertino, CA): 2024-present
+						</li>
+						<li>
+							<span class="font-semibold">De Anza College</span> (Dual Enrollment): 2025-present
+						</li>
 					</ul>
 					<p><span class="font-medium">High school GPA:</span> UW - 4.0, W - 4.46</p>
 				</section>
