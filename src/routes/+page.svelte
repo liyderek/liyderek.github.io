@@ -15,6 +15,10 @@
 
 	const languages = ['C', 'C++', 'Rust', 'Java', 'Svelte', 'Python'];
 	const skills = [
+		{
+			name: 'Advanced data structures and algorithms',
+			description: 'Algorithm knowledge such as dynamic programming, graph theory, etc'
+		},
 		{ name: 'Linux', description: 'Fundamentals of linux systems' },
 		{ name: 'NixOS', description: 'NixOS server management' },
 		{ name: 'Tauri', description: 'Mobile frontend app development using Tauri' },
@@ -288,8 +292,8 @@
 							2026-present
 						</p>
 						<p class="text-sm text-stone-700 dark:text-stone-300">
-							Started a focus and scheduling app for people with attention issues such as ADHD to
-							concentrate and plan tasks and events.
+							Started a mobile focus and scheduling app for people with attention issues such as
+							ADHD to concentrate and plan tasks and events.
 						</p>
 					</div>
 					<Separator />
