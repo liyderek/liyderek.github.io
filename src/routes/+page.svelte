@@ -15,10 +15,6 @@
 
 	const languages = ['C', 'C++', 'Rust', 'Java', 'Svelte', 'Python'];
 	const skills = [
-		{
-			name: 'Advanced data structures and algorithms',
-			description: 'Algorithm knowledge such as dynamic programming, graph theory, etc'
-		},
 		{ name: 'Linux', description: 'Fundamentals of linux systems' },
 		{ name: 'NixOS', description: 'NixOS server management' },
 		{ name: 'Tauri', description: 'Mobile frontend app development using Tauri' },
