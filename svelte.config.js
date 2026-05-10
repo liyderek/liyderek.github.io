@@ -7,7 +7,7 @@ const config = {
 			strict: false
 		}),
 		prerender: {
-			entries: ['/', '/about', '/sverdle/how-to-play']
+			entries: ['/', '/about', '/sitemap.xml']
 		}
 	}
 };
