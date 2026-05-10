@@ -7,7 +7,7 @@ const config = {
 			strict: false
 		}),
 		prerender: {
-			entries: ['/', '/about', '/sitemap.xml']
+			entries: ['/', '/about']
 		}
 	}
 };
