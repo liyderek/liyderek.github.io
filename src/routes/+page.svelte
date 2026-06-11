@@ -69,7 +69,8 @@
 			{ year: '2026', contest: 'Harker programming invitational', result: '4th place' },
 			{ year: '2026', contest: 'BISV hackathon', result: 'won Elevenlabs award' },
 			{ year: '2026', contest: 'Teams code spring contest', result: '3rd place Advanced' },
-			{ year: '2026', contest: 'USACO Gold', result: 'scored 333' }
+			{ year: '2026', contest: 'USACO Gold', result: 'scored 333' },
+			{ year: '2026', contest: 'Teamscode Advanced division', result: 'won 3rd place' }
 		],
 		music: [
 			{
